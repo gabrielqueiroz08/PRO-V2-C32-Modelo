@@ -13,6 +13,11 @@ var ball;
 var blower;
 var blowerMouth;
 var button;
+var boom;
+
+function preload() {
+  boom = loadSound("boom.mp3")
+}
 
 function setup() {
   var canvas = createCanvas(500, 500);
@@ -27,13 +32,9 @@ function setup() {
   button.position(width / 2, height - 100);
   button.class("blowButton");
 
-  //button.mousePressed(blow);
+  button.mousePressed(blow);
 
-  //buttonPressed(blow);
-  
-  //button = mousePressed(blow);
-  
-  //button.mousePressed();
+
 
 }
 
@@ -47,14 +48,7 @@ function draw() {
 }
 
 function blow() {
-
-  //Matter.Body.applyForce(ball.body, {x:0, y:0}, {x:0, y:-0.05});
-
-  //Matter.Body.applyForce(ball.body, {x:0, y:0}, {x:0, y:0.05});
-  
-  //Matter.Body.applyForce(ball.body, {x:0, y:0}, {x:0.05, y:0.05});
-  
-  //Matter.Body.applyForce(ball.body, {x:0, y:0}, {x:-0.05, y:0});
-
+  Matter.Body.applyForce(ball.body, { x: 0.01, y: 0 }, { x: 0, y: -0.1 });
+  boom.play();
+  boom.setVolume(0.5)
 }
-
