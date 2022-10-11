@@ -50,5 +50,5 @@ function draw() {
 function blow() {
   Matter.Body.applyForce(ball.body, { x: 0.01, y: 0 }, { x: 0, y: -0.1 });
   boom.play();
-  boom.setVolume(0.5)
+  boom.setVolume(1)
 }
